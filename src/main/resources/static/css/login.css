@@ -1,47 +1,5 @@
  body{
 	margin: auto;
-	width: 80%;
+	width: 20%;
 } 
 
-#login-content{
-	margin: auto;	
-	margin-top: 50px;
-	
-	width: 30%;
-	
-	max-width:500px; 
-	min-width: 350px;
-	
-}
-
-#user-id-input{
-	font-weight: bold;
-	
-	margin-top:10px;
-	margin-bottom: 10px;
-	
-	padding: 10px;
-	
-	width: 100%;
-	
-	box-sizing: border-box;
-	
-	border: 1px solid gray;
-	border-radius: 10px;
-}
-
-#user-pwd-input{
-	font-weight: bold;
-	
-	margin-top:10px;
-	margin-bottom: 10px;
-	
-	padding: 10px;
-	
-	width: 100%;
-	
-	box-sizing: border-box;
-	
-	border: 1px solid gray;
-	border-radius: 10px;
-}
