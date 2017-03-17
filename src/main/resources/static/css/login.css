@@ -1,5 +1,27 @@
  body{
-	margin: auto;
-	width: 20%;
+ 	margin: auto;
+ 	text-align: center;
+ 	margin-top: 150px;
+	width: 80%;
 } 
 
+login-content{
+	
+}
+
+
+user-pwd-input{
+	
+}
+
+login-summit-btn{
+	
+}
+
+user-register-btn{
+	
+}
+
+forget-user-info-btn{
+	
+}
