@@ -1,27 +1,86 @@
  body{
  	margin: auto;
- 	text-align: center;
- 	margin-top: 150px;
 	width: 80%;
+	background-color:#a4f2c6;
 } 
 
-login-content{
+#login-content{
+	margin: 150px auto;	
+	
+	text-align: center; /*아래의 text-align이 적용이 되지 않는다.*/
+	border-radius: 15px; /* 돌려깍기*/
+	padding: 5px; 
+    width: 300px;
+    height: 250px; 
+	background-color: #ffffff;
+	border: 2px solid #4CAF50;
+}
+
+#user-id-input{
+	
+	border: 0px solid #4CAF50;
+    border-bottom-width: 1px;
+    background-color: transparent;
+    
+    margin-top : 5px;
+    padding: 5px 5px;
+    font-size : 15px;
+    
+    outline: none;
+    word-wrap: break-word;
 	
 }
 
-
-user-pwd-input{
-	
+#user-pwd-input{
+	border: 0px solid #4CAF50;
+    border-bottom-width: 1px;
+    background-color: transparent;
+    
+    margin-top : 5px;
+    padding: 5px 5px;
+    font-size : 15px;
+    
+    outline: none;
+    word-wrap: break-word;
 }
 
-login-summit-btn{
-	
+#login-summit-btn{
+	border-radius: 15px;
+	background-color: #f7d345;
+	margin : 10px 0px 0px 5px;
+
+	font-size : 15px;
+	border: none;
+    color: white;
+    
+    padding: 10px 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
 }
 
-user-register-btn{
+#user-register-btn{
+	border-radius: 15px;
+	background-color: #04ed18;
 	
+	font-size : 15px;
+	border: none;
+    color: white;
+    
+    padding: 10px 30px;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
-forget-user-info-btn{
+#forget-user-info-btn{	/*정렬이 안됨*/
+	margin-top : 10px;
+	font-style : oblique;
+	font-size : 10px;
+	padding: 10px ,5px;
+	text-align: right;
 	
 }
