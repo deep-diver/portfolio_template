@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link href="login.css" rel="stylesheet" type="text/css">
-        <title>System Name</title>
-    </head>
-    
-    <body>
-    </body>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../static/css/login.css">
+<title>Login Page - Welcome to Apps management system</title>
+</head>
+
+<body>
+	<div id="login-form">
+		<form method="post" id="login-content">
+			<div>
+				 <input type="text" name="login"  placeholder="아이디(@이메일)" id ="user-id-input">
+			</div>
+			<div>
+				
+				<input type="text" name="password" placeholder="비밀번호" id ="user-pwd-input">
+				
+	 		</div>
+
+			<div>
+				<button type="submit" id="login-summit-btn">로그인</button>
+				<button type="submit" id="user-register-btn">회원가입</button>
+			</div>
+
+			<div>
+				<span class="right-align" id="forget-user-info-btn"> <a href="http://localhost/find_user_info.html">
+					아이디/비밀번호 찾기</a>
+					</span>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>
