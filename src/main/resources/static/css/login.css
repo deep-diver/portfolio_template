@@ -4,83 +4,89 @@
 } 
 
 #login-content{
+	
 	margin: 150px auto ;	
+    width: 300px;
+    height: 250px;
+    
+    padding: 50px;
 	
 	text-align: center; 
 	border-radius: 15px;
-	padding: 50px; 
-    width: 300px;
-    height: 250px; 
+ 
 	background-color: #ffffff;
 	border: 2px solid #4CAF50;
 }
 
 #user-id-input{
 	
+	width: 90%;
+	
+	margin : 20px;
+    padding: 5px 5px;
+    
 	border: 0px solid #4CAF50;
     border-bottom-width: 1px;
-    background-color: transparent;
-    
-    margin : 20px;
-    
-    padding: 5px 5px;
+        
     font-size : 15px;
     
-    outline: none;
-    word-wrap: break-word;
-	
 }
 
 #user-pwd-input{
+	
+	width: 90%;
+	
+	margin : 20px;
+    padding: 5px 5px;
+    
 	border: 0px solid #4CAF50;
     border-bottom-width: 1px;
-    background-color: transparent;
     
-    margin-top : 5px;
-    padding: 5px 5px;
     font-size : 15px;
     
-    outline: none;
-    word-wrap: break-word;
 }
 
 #login-summit-btn{
+	
+	margin : 30px 15px;
+	padding: 10px 30px;
+	
 	border-radius: 15px;
 	background-color: #f7d345;
-	margin : 30px 0px 0px 5px;
-
+	
 	font-size : 15px;
 	border: none;
     color: white;
-    
-    padding: 10px 30px;
-    
+           
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    
 }
 
 #user-register-btn{
+	
+	padding: 10px 30px;
+	
 	border-radius: 15px;
 	background-color: #04ed18;
 	
 	font-size : 15px;
 	border: none;
     color: white;
-    
-    padding: 10px 30px;
-    
+        
     text-align: center;
     text-decoration: none;
+    
     display: inline-block;
 }
 
-#forget-user-info-btn{	/*정렬이 안됨*/
-	margin-top : 30px;
-	font-style : oblique;
-	font-size : 10px;
-	padding: 10px ,5px;
-	float: right;
+#forget-user-info-btn{
 	
+	margin-top : 30px;
+	padding: 10px ,5px;
+	
+	font-style : oblique;
+	font-size : 12px;
+	
+	float: right;
 }
