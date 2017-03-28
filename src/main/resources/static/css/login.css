@@ -3,7 +3,7 @@
 	background-color:#a4f2c6;
 } 
 
-#login-content{
+#form{
 	
 	margin: 150px auto ;	
     width: 300px;
@@ -18,7 +18,15 @@
 	border: 2px solid #4CAF50;
 }
 
-#user-id-input{
+#content{
+	
+	   width: 90%;
+    
+    background-color: transparent; 
+	
+}
+
+#content input[type=text]{
 	
 	width: 90%;
 	
@@ -29,27 +37,9 @@
     border-bottom-width: 1px;
         
     font-size : 15px;
-    
 }
 
-#user-pwd-input{
-	
-	
-	width: 90%;
-	
-	margin : 8px;
-    padding: 5px;
-    
-	border: 0 solid #4CAF50;
-    border-bottom-width: 1px;
-    
-    font-size : 15px;
-    
-    
-    
-}
-
-#login-summit-btn{
+#login-submit-btn{
 	
 	margin : 30px 15px;
 	padding: 10px 30px;
@@ -69,7 +59,7 @@
 	padding: 10px 30px;
 	
 	border-radius: 15px;
-	background-color: #04ed18;
+	background-color: lightgreen;
 	
 	font-size : 15px;
 	border: none;
@@ -78,7 +68,7 @@
     display: inline-block;
 }
 
-#forget-user-info-btn{
+#forget-user-btn{
 	
 	margin-top : 30px;
 	padding: 10px ,5px;

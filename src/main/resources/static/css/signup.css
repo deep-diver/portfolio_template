@@ -3,8 +3,7 @@
 	background-color:#a4f2c6;
 } 
 
-
-#signup_main {
+#form {
 	
 	margin: 150px auto;
     width: 300px;
@@ -19,7 +18,7 @@
 	border: 2px solid #4CAF50;
 }
 
-#signup_text{
+#content {
 	
     width: 90%;
     
@@ -27,20 +26,20 @@
         
     }
 
-#signup_text input[type=text]{
+#content input[type=text]{
 	
     width: 90%;
     
     margin : 8px;
     padding: 5px;
         
-    border : 0 solid lightgreen;
+    border : 0 solid #4CAF50;
     border-bottom-width: 1px;
     
     font-size : 15px;
 }
 
-#signup_button{
+#signup_btn{
 	
     margin-top: 10px;
     width: 90%;
@@ -49,7 +48,7 @@
     margin-right: 5%;
 }
 
-#signup_button select{
+#signup_btn select{
 	    
     width: 100%;
     height:25px;
