@@ -30,8 +30,11 @@
 #signup_text input[type=text]{
 	
     width: 90%;
-    padding: 5px 5px 5px;
-    border : 0px solid lightgreen;
+    
+    margin : 8px;
+    padding: 5px;
+        
+    border : 0 solid lightgreen;
     border-bottom-width: 1px;
     
     font-size : 15px;
@@ -47,22 +50,24 @@
 }
 
 #signup_button select{
-	
-    margin-top: 15px;
+	    
     width: 100%;
     height:25px;
+    
     background-color: lightsalmon;
     font-weight: bold;
     color: white;
 }
 
 #signup_submit input[type=submit]{
-	
-    margin-top: 15px;
-    height: 25px;
-    width: 80px;
+	margin : 30px 15px;
+	padding: 10px 30px;
+    
+    border-radius: 15px;
     background-color:lightgreen;
-    border: 0px;
-    border-radius: 5px;
+    
+   	font-size : 15px;
+   	
+   	border: none;
     color: white;
 }

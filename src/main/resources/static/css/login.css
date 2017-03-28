@@ -22,10 +22,10 @@
 	
 	width: 90%;
 	
-	margin : 20px;
-    padding: 5px 5px;
+	margin : 8px;
+    padding: 5px;
     
-	border: 0px solid #4CAF50;
+	border: 0 solid #4CAF50;
     border-bottom-width: 1px;
         
     font-size : 15px;
@@ -34,15 +34,18 @@
 
 #user-pwd-input{
 	
+	
 	width: 90%;
 	
-	margin : 20px;
-    padding: 5px 5px;
+	margin : 8px;
+    padding: 5px;
     
-	border: 0px solid #4CAF50;
+	border: 0 solid #4CAF50;
     border-bottom-width: 1px;
     
     font-size : 15px;
+    
+    
     
 }
 
@@ -57,9 +60,7 @@
 	font-size : 15px;
 	border: none;
     color: white;
-           
-    text-align: center;
-    text-decoration: none;
+   
     display: inline-block;
 }
 
@@ -73,10 +74,7 @@
 	font-size : 15px;
 	border: none;
     color: white;
-        
-    text-align: center;
-    text-decoration: none;
-    
+   
     display: inline-block;
 }
 
