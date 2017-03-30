@@ -1,71 +1,69 @@
-#signup_main {
+ body{
+ 	
+	background-color:#a4f2c6;
+} 
+
+#form {
+	
+	margin: 150px auto;
     width: 300px;
-    height: 350px;
-    margin: auto;
+    height: 250px;
+        
+    padding: 50px;
     
     text-align: center;
-    margin-top: 150px;
-    border-radius: 10px;
-    border: 1px solid lightgreen;
-
-    padding-top: 20px;
-
+    border-radius: 15px;
     
+	background-color: #ffffff;
+	border: 2px solid #4CAF50;
 }
-#signup_text{
-    background-color: white;
-   /* 
-    margin-left: 5px;
-    margin-right: 5px;
-    */
+
+#content{
+	
     width: 90%;
     
-    margin-top: 10px;
-    height: 20;
+    background-color: transparent; 
+        
+    }
 
-    
-}
-#signup_text input[type=text]{
-    color: black;
+#content input[type=text]{
+	
     width: 90%;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border : 1px solid lightgreen;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;
     
+    margin : 8px;
+    padding: 5px;
+        
+    border : 0 solid #4CAF50;
+    border-bottom-width: 1px;
     
-    
+    font-size : 15px;
 }
-#signup_button{
-    margin-top: 10px;
+
+select {
+	margin-top: 10px;
     width: 90%;
     
     margin-left: 5%;
     margin-right: 5%;
-
-    
-}
-#signup_button select{
-    margin-top: 15px;
+	
+	    
     width: 100%;
     height:25px;
+    
     background-color: lightsalmon;
     font-weight: bold;
     color: white;
 }
 
-
-#signup_submit input[type=submit]{
-    margin-top: 15px;
-    height: 25px;
-    width: 80px;
-    background-color:lightgreen;
-    border: 0px;
-    border-radius: 5px;
-    color: white;
-
+#submit {
+	margin : 30px 15px;
+	padding: 10px 30px;
     
+    border-radius: 15px;
+    background-color:lightgreen;
+    
+   	font-size : 15px;
+   	
+   	border: none;
+    color: white;
 }

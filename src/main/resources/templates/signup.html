@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
     <head>
         <meta charset="utf-8">
-        <link href="signup.css" rel="stylesheet" type="text/css">
-        <title>template Update</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/signup.css">
+        <title>signup page</title>
     </head>
+    
     <body>
-        <div id ="signup_main">
-            <from id = 'signup_text'>
-                <input type="text" name="signup_id" value="아이디  (@이메일)"><br>
-                <input type="text" name="signup_password" value="비밀번호"><br>
-                <input type="text" name="signup_password_cofirm" value="비밀번호 (재입력)"><br>
-                <input type="text" name="signup_name" value="이름 (성명)"><br>
-            </from>
-
-            <div id = 'signup_button'>
-                <select name="projcet_team">
-                    <option value="ProjectTeam1">개발 1팀</option>
-                    <option value="ProjectTeam2">개발 2팀</option>
-                    <option value="기타">기타</option>
-                </select>
-             </div>
-             <div id = 'signup_submit'>
-                  <input type="submit" value="Submit">
-              </div>
-                                                 
+        <div id ="form">
+            <form id = "content">
+            	<div>
+               		<input type="text" name="id" placeholder="아이디  (@이메일)">
+               		<input type="text" name="password" placeholder="비밀번호">
+               		<input type="text" name="password_confirm" placeholder="비밀번호 (재입력)">
+               		<input type="text" name="name" placeholder="이름 (성명)">
+            	</div>
+             
+            	<div>
+                	<select name="team" >
+                		<option value="Team1">TEAM 1</option>
+                    	<option value="Team2">TEAM 2 </option>
+                    	<option value="Team3">TEAM 3 </option>
+                    	<option value="">직접 입력</option>
+                	</select>
+             	</div>
+             
+             	<div>
+             		<button type="submit" id = "submit"> Submit </button>
+              	</div>
+           	</form>                               
         </div>
     </body>
 </html>
