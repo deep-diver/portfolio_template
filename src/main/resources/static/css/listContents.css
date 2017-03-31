@@ -1,0 +1,42 @@
+#listContent_main {
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    text-align: center;
+    margin-top: 150px;
+    border-radius: 10px;
+    border: 1px solid lightgreen;
+    padding-top: 5px;
+    padding-right: 15px;
+
+    
+}
+
+#listContent_main ul{
+    list-style: none;
+    width: 90%;
+    
+}
+
+#listContent_main ul li{
+    color: black;
+    font-weight: bold;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    border : 1px solid lightgreen;
+    border-radius: 10px;
+    height: 50px;
+    margin-bottom: 5px;
+    
+    
+    
+}
+#listContent_main ul li input[type=text]{
+    margin-left: 50%;
+    color: black;    
+    border : 0px solid lightgreen;
+    text-align: right;
+    font-size: 8px; 
+    
+}
