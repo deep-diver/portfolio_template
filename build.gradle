@@ -27,6 +27,8 @@ repositories {
 
 
 dependencies {
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile('net.sourceforge.nekohtml:nekohtml:1.9.22')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf') 
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('mysql:mysql-connector-java')
