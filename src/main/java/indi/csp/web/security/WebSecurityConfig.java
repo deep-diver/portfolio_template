@@ -3,27 +3,24 @@ package indi.csp.web.security;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+@Configuration
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
     private DataSource dataSource;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.antMatchers("/user/**").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/list/**").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/detail/**").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/upload").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/update/item").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/update/user").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/resources/**")
-					.anonymous()
-					.anyRequest()
-					.permitAll()
+		http.
+		authorizeRequests()
+				.antMatchers("/", "/user/*", "/list/*/*", "/detail/*", "/upload", "/update/item", "/update/user").hasAnyRole("USER").anyRequest().authenticated()
+				.antMatchers("/resources/**").anonymous().anyRequest().permitAll()
 		.and()
 			.formLogin()
 				.loginPage("/signin")
@@ -36,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll()
 		.and()
 			.csrf().disable();
-	}
+	}	
 
 	@Autowired
 	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
