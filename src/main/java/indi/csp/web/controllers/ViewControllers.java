@@ -12,12 +12,6 @@ public class ViewControllers {
 		return view;
 	}
 	
-	@RequestMapping("/signin") 
-	public ModelAndView viewOfSignin() {
-		ModelAndView view = new ModelAndView();
-		return view;
-	}
-	
 	@RequestMapping("/signup")
 	public ModelAndView viewOfSignup() {
 		ModelAndView view = new ModelAndView();
