@@ -16,11 +16,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 	
 	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	protected void configure(HttpSecurity http) throws Exception {		
 		http.
 		authorizeRequests()
-				.antMatchers("/", "/user/*", "/list/*/*", "/detail/*", "/upload", "/update/item", "/update/user").hasAnyRole("USER").anyRequest().authenticated()
-				.antMatchers("/resources/**").anonymous().anyRequest().permitAll()
+				.antMatchers("/", "/user/*", "/list/*/*", "/detail/*", "/upload", "/update/item", "/update/user")
+				.hasAnyRole("USER")
+				.anyRequest()
+				.authenticated()				
+			.antMatchers("/resources/**")
+				.anonymous()
+				.anyRequest()
+				.permitAll()
 		.and()
 			.formLogin()
 				.loginPage("/signin")
@@ -40,7 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth
         	.jdbcAuthentication()
         		.dataSource(dataSource)
-        		.usersByUsernameQuery("SELECT id, password, enabled FROM user WHERE id=?")
-        		.authoritiesByUsernameQuery("SELECT user_id, role FROM user_role WHERE user_id=?");
+        		.usersByUsernameQuery(
+        				"SELECT id, password, enabled FROM user WHERE id=?")
+        		.authoritiesByUsernameQuery(
+        				"SELECT user_id, role FROM user_role WHERE user_id=?");
 	}
 }
