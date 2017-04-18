@@ -5,7 +5,7 @@ public class ItemVO {
 	private String 		title;
 	private String 		department;
 	private String 		description;
-	private VersionVO 	lastestVersion;
+	private String	 	latestVersion;
 	
 	public String getId() {
 		return id;
@@ -19,6 +19,12 @@ public class ItemVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getLatestVersion() {
+		return latestVersion;
+	}
+	public void setLatestVersion(String latestVersion) {
+		this.latestVersion = latestVersion;
+	}
 	public String getDepartment() {
 		return department;
 	}
@@ -30,11 +36,5 @@ public class ItemVO {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public VersionVO getLastestVersion() {
-		return lastestVersion;
-	}
-	public void setLastestVersion(VersionVO lastestVersion) {
-		this.lastestVersion = lastestVersion;
 	}
 }
