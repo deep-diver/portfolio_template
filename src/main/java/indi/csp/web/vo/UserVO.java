@@ -45,4 +45,15 @@ public class UserVO {
 	public void setRole(String role) {
 		this.role = role;
 	}	
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("success: " + success  + ", ");
+		str.append("totalCount: " +  totalCount  + ", ");
+		str.append("id: " + id + ", ");
+		str.append("name: " + name + ", ");
+		str.append("department: " + department + ", ");
+		str.append("role: " + role);
+		return str.toString();
+	}
 }
