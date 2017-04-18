@@ -1,18 +1,26 @@
 package indi.csp.web.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import indi.csp.web.database.VOMapper;
+import indi.csp.web.vo.UserVO;
+
 @RestController
 public class RestControllers {
+	@Autowired
+	private VOMapper voMapper;
+	
 	/* 
 	 * GET Methods 
 	 */
 	
 	@RequestMapping("/user/{id}")
-	public String getUserDetailInfo(@PathVariable("id") String id) {
-		return "getUserDetailInfo";
+	public UserVO getUserDetailInfo(@PathVariable("id") String id) {
+		UserVO userVo = voMapper.getUserInfoBy(id);
+		return userVo;
 	}
 	
 	@RequestMapping("/list/{a}/{z}")
