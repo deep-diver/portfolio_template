@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import indi.csp.web.vo.ItemDetailVO;
 import indi.csp.web.vo.ItemListVO;
 import indi.csp.web.vo.ItemVO;
 import indi.csp.web.vo.UserVO;
@@ -101,6 +102,54 @@ public class VOMapper {
 		
 		return itemListVo;
 	}
+	
+	public ItemDetailVO getDetailInfoBy(String id) {
+		String sql = ""
+				+ "SELECT "
+				   + "i.title, "
+				   + "i.description, "
+				   + "concat((iv.major), \".\" , (iv.minor)) as version,"
+				   + "iv.date as last_update_date"
+				+ "FROM"
+				    + "item_version iv, "
+				   + "item i "
+				+ "WHERE "
+				   +"i.id = 1 /* parameters here */ "
+				   +"AND "
+				   +"iv.id = i.version";
+		
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("user_id", id);
+		
+		List<ItemDetailVO> itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));
+		itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));		
+		ItemListVO itemListVo = new ItemListVO();
+		itemListVo.setItems(itemDetailVOs);
+		itemListVo.setTotalCount(itemDetailVOs.size());
+		
+		System.out.println("start: " + start);
+		System.out.println("end: " + end);
+		System.out.println("query: " + sql);
+		System.out.println("size: " + itemVos.size());
+		
+		if (itemDetailVOs.isEmpty()) {
+			itemListVo.setSuccess(false);
+			itemListVo.setStartRange(start);
+			itemListVo.setEndRange(start);
+		}
+		else {
+			itemListVo.setSuccess(true);
+			itemListVo.setStartRange(start);
+			itemListVo.setEndRange(start + itemDetailVOs.size());			
+		}
+		
+		
+		ItemDetailVO itemDeltailVo = new ItemDetailVO();
+		
+		return itemDeltailVo;
+		
+	}
+	
 }
 
 
