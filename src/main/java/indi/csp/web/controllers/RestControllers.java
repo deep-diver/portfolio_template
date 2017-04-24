@@ -21,7 +21,7 @@ public class RestControllers {
 
 	@RequestMapping("/user/{id}")
 	public UserVO getUserDetailInfo(@PathVariable("id") String id) {
-		UserVO userVo = voMapper.gWetUserInfoBy(id);
+		UserVO userVo = voMapper.getUserInfoBy(id);
 		return userVo;
 	}
 
@@ -32,9 +32,8 @@ public class RestControllers {
 	}
 
 	@RequestMapping("/detail/{id}")
-	public String getItemDetailInfo(@PathVariable("id") String id) {
-		ItemDetailVO result = voMapper.getDetailInfoBy();
-				
+	public ItemDetailVO getItemDetailInfo(@PathVariable("id") String id) {
+		ItemDetailVO result = voMapper.getDetailInfoBy(id);
 		return result;
 	}
 

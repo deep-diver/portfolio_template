@@ -123,16 +123,14 @@ public class VOMapper {
 		
 		List<ItemDetailVO> itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));
 		itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));		
-		ItemListVO itemListVo = new ItemListVO();
-		itemListVo.setItems(itemDetailVOs);
-		itemListVo.setTotalCount(itemDetailVOs.size());
 		
-		System.out.println("start: " + start);
-		System.out.println("end: " + end);
-		System.out.println("query: " + sql);
-		System.out.println("size: " + itemVos.size());
+		ItemDetailVO itemDetailVo = new ItemDetailVO();
 		
-		if (itemDetailVOs.isEmpty()) {
+		itemDetailVo.setVersions(itemDetailVOs);
+		itemDetailVo.setVersions(itemDetailVOs);
+		itemDetailVo.setTotalCount(itemDetailVOs.size());
+		
+		if (itemVos.isEmpty()) {
 			itemListVo.setSuccess(false);
 			itemListVo.setStartRange(start);
 			itemListVo.setEndRange(start);
@@ -140,16 +138,13 @@ public class VOMapper {
 		else {
 			itemListVo.setSuccess(true);
 			itemListVo.setStartRange(start);
-			itemListVo.setEndRange(start + itemDetailVOs.size());			
+			itemListVo.setEndRange(start + itemVos.size());			
 		}
 		
+		return itemDeltailVo;		
 		
-		ItemDetailVO itemDeltailVo = new ItemDetailVO();
-		
-		return itemDeltailVo;
-		
-	}
-	
+		}
+
 }
 
 
