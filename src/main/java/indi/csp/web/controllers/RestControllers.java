@@ -33,7 +33,7 @@ public class RestControllers {
 
 	@RequestMapping("/detail/{id}")
 	public ItemDetailVO getItemDetailInfo(@PathVariable("id") String id) {
-		ItemDetailVO result = voMapper.getDetailInfoBy(id);
+		ItemDetailVO result = voMapper.getItemDetailInfoBy(id);
 		return result;
 	}
 

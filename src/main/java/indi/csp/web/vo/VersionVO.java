@@ -3,26 +3,19 @@ package indi.csp.web.vo;
 import java.util.Date;
 
 public class VersionVO {
-	private Date date;
-	private int major;
-	private int minor;
+	private String date;
+	private String version;
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
-	public int getMajor() {
-		return major;
+	public String getVersion() {
+		return version;
 	}
-	public void setMajor(int major) {
-		this.major = major;
+	public void setVersion(String version) {
+		this.version = version;
 	}
-	public int getMinor() {
-		return minor;
-	}
-	public void setMinor(int minor) {
-		this.minor = minor;
-	}	
 }

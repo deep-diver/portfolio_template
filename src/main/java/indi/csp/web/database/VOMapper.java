@@ -1,10 +1,15 @@
 package indi.csp.web.database;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -13,6 +18,7 @@ import indi.csp.web.vo.ItemDetailVO;
 import indi.csp.web.vo.ItemListVO;
 import indi.csp.web.vo.ItemVO;
 import indi.csp.web.vo.UserVO;
+import indi.csp.web.vo.VersionVO;
 
 @Repository
 public class VOMapper {
@@ -103,47 +109,58 @@ public class VOMapper {
 		return itemListVo;
 	}
 	
-	public ItemDetailVO getDetailInfoBy(String id) {
+	public ItemDetailVO getItemDetailInfoBy(String id) {
 		String sql = ""
 				+ "SELECT "
 				   + "i.title, "
 				   + "i.description, "
 				   + "concat((iv.major), \".\" , (iv.minor)) as version,"
-				   + "iv.date as last_update_date"
-				+ "FROM"
+				   + "iv.date as update_date "
+				+ "FROM "
 				    + "item_version iv, "
 				   + "item i "
 				+ "WHERE "
-				   +"i.id = 1 /* parameters here */ "
+				   +"i.id = :item_id " 
 				   +"AND "
 				   +"iv.id = i.version";
 		
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("user_id", id);
+		params.addValue("item_id", id);
 		
-		List<ItemDetailVO> itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));
-		itemDetailVOs = paramJdbcTemplate.query(sql, params, new BeanPropertyRowMapper<ItemDetailVO>(ItemDetailVO.class));		
+		RowMapper<ItemDetailVO> itemDetailMapper = new RowMapper<ItemDetailVO>() {
+			
+			@Override
+			public ItemDetailVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+				ItemDetailVO itemDetailVo = new ItemDetailVO();
+				List<VersionVO> versionVos = new ArrayList<VersionVO>();
+				int row = 0;
+				
+				while(rs.next()) {
+					if (row == 0) {
+						rs.first();
+						itemDetailVo.setTitle(rs.getString("title"));
+						itemDetailVo.setDescription(rs.getString("description"));
+					}
+					
+					VersionVO versionVo = new VersionVO();
+					versionVo.setDate(rs.getString("update_date"));
+					versionVo.setVersion(rs.getString("version"));
+					versionVos.add(versionVo);
+					
+					row++;
+				}
+				
+				itemDetailVo.setVersions(versionVos);
+				itemDetailVo.setTotalCount(versionVos.size());
+				itemDetailVo.setSuccess(!versionVos.isEmpty());
+				
+				return itemDetailVo;
+			}
+		};
 		
-		ItemDetailVO itemDetailVo = new ItemDetailVO();
-		
-		itemDetailVo.setVersions(itemDetailVOs);
-		itemDetailVo.setVersions(itemDetailVOs);
-		itemDetailVo.setTotalCount(itemDetailVOs.size());
-		
-		if (itemVos.isEmpty()) {
-			itemListVo.setSuccess(false);
-			itemListVo.setStartRange(start);
-			itemListVo.setEndRange(start);
-		}
-		else {
-			itemListVo.setSuccess(true);
-			itemListVo.setStartRange(start);
-			itemListVo.setEndRange(start + itemVos.size());			
-		}
-		
-		return itemDeltailVo;		
-		
-		}
+		ItemDetailVO itemDetailVo = paramJdbcTemplate.queryForObject(sql, params, itemDetailMapper);				
+		return itemDetailVo;			
+	}
 
 }
 
