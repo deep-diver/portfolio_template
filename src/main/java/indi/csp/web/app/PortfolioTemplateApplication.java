@@ -7,8 +7,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
+@ComponentScan("indi.csp.web.database")
+@ComponentScan("indi.csp.web.vo")
 @ComponentScan("indi.csp.web.security")
 @ComponentScan("indi.csp.web.controllers")
+
 public class PortfolioTemplateApplication extends WebMvcConfigurerAdapter {
 
 	public static void main(String[] args) {
