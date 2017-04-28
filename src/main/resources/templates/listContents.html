@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="listContents.css">
+        <link rel="stylesheet" type="text/css" href="/css/listContents.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="/js/listContents.js"></script>
         <title>ListContent</title>
@@ -10,6 +10,11 @@
     <body>
         <div id ="listContent_main">
             <ul>
+            	<li data-th-each="item : ${item_list}">
+            		<a data-th-text="${item.title}">HERO</a>
+            		<input type="text" data-th-text="${item.title} + '/' + ${item.latestVersion}">
+            	</li>
+<!-- 
               <li>
                 <a>HERO</a><br> <input type="text" value="2017.01.01 /v0.1">
               </li>
@@ -22,7 +27,8 @@
               <li>
                 <a>GTA5</a><br><input type="text" value="2017.01.01 /v1.2">
               </li>
-            </ull>              
+ -->              
+            </ul>              
         </div>
     </body>
 </html>
