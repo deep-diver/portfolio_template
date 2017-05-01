@@ -1,11 +1,14 @@
 package indi.csp.web.vo;
 
+import java.util.Date;
+
 public class ItemVO {
 	private String 		id;
 	private String 		title;
 	private String 		department;
 	private String 		description;
 	private String	 	latestVersion;
+	private String 		latestUpdate;
 	
 	public String getId() {
 		return id;
@@ -37,4 +40,13 @@ public class ItemVO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getLatestUpdate() {
+		return latestUpdate;
+	}
+	public void setLatestUpdate(String latestUpdate) {
+		this.latestUpdate = latestUpdate;
+	}
+
+
+	
 }

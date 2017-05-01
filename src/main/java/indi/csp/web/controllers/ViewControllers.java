@@ -32,4 +32,5 @@ public class ViewControllers {
 		ModelAndView view = new ModelAndView();
 		return view;
 	}
+	
 }
